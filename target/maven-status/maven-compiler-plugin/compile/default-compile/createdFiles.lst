@@ -1,0 +1,12 @@
+com\gustavoigor\cadastro_jogadores_uol\model\Codinome.class
+com\gustavoigor\cadastro_jogadores_uol\dto\VingadoresResponseDTO.class
+com\gustavoigor\cadastro_jogadores_uol\dto\VingadorDTO.class
+com\gustavoigor\cadastro_jogadores_uol\Test\TesteLigaDaJustica.class
+com\gustavoigor\cadastro_jogadores_uol\repository\CodinomeRepository.class
+com\gustavoigor\cadastro_jogadores_uol\model\Jogador.class
+com\gustavoigor\cadastro_jogadores_uol\service\contentExternal\LigaDaJusticaService.class
+com\gustavoigor\cadastro_jogadores_uol\service\JogadorService.class
+com\gustavoigor\cadastro_jogadores_uol\service\contentExternal\VingadoresService.class
+com\gustavoigor\cadastro_jogadores_uol\Test\TesteVingadores.class
+com\gustavoigor\cadastro_jogadores_uol\CadastroJogadoresUolApplication.class
+com\gustavoigor\cadastro_jogadores_uol\repository\JogadorRepository.class

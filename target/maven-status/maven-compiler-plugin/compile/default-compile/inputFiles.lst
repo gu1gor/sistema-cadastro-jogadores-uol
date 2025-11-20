@@ -1,1 +1,12 @@
 C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\CadastroJogadoresUolApplication.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\dto\VingadorDTO.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\dto\VingadoresResponseDTO.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\model\Codinome.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\model\Jogador.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\repository\CodinomeRepository.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\repository\JogadorRepository.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\service\contentExternal\LigaDaJusticaService.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\service\contentExternal\VingadoresService.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\service\JogadorService.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\Test\TesteLigaDaJustica.java
+C:\Users\Gusss\Documents\Intellij IDE\ProjetoUOL\sistema-cadastro-jogadores-uol\src\main\java\com\gustavoigor\cadastro_jogadores_uol\Test\TesteVingadores.java
