@@ -11,9 +11,5 @@ import lombok.Data;
 public class Codinome {
 
     @Id
-    private String nomeCodinome;
-
-    private String listaReferencia; // de qual lista veio
-
-    private boolean disponivel = true; // true = ainda não usado
+    private String codinome;
 }
