@@ -25,5 +25,5 @@ public class Jogador {
     preenchidos quando o cadastro for feito */
     private String codinome;
 
-    private List<String> listaReferencia;    //vingadores.json" ou "liga_da_justica.xml
+    private String listaReferencia;    //vingadores.json" ou "liga_da_justica.xml
 }
