@@ -1,4 +1,4 @@
-package com.gustavoigor.cadastro_jogadores_uol.Test;
+package com.gustavoigor.cadastro_jogadores_uol;
 
 import com.gustavoigor.cadastro_jogadores_uol.service.contentExternal.VingadoresService;
 import org.springframework.web.client.RestTemplate;
@@ -9,7 +9,7 @@ public class TesteVingadores {
         RestTemplate restTemplate = new RestTemplate();
         VingadoresService vingadores = new VingadoresService(restTemplate);
 
-        vingadores.buscarCodinomes().forEach(System.out::println);
+        vingadores.buscarCodinomesDisponiveis().forEach(System.out::println);
     }
 }
 

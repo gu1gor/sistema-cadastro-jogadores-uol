@@ -1,4 +1,4 @@
-package com.gustavoigor.cadastro_jogadores_uol.Test;
+package com.gustavoigor.cadastro_jogadores_uol;
 
 import com.gustavoigor.cadastro_jogadores_uol.service.contentExternal.LigaDaJusticaService;
 import org.springframework.web.client.RestTemplate;

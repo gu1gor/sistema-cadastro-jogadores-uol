@@ -19,7 +19,7 @@ public class VingadoresService {
         this.restTemplate = restTemplate;
     }
 
-    public List<String> buscarCodinomes() {
+    public List<String> buscarCodinomesDisponiveis() {
         try {
             String json = restTemplate.getForObject(URL, String.class);
 

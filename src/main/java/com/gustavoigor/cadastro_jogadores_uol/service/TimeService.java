@@ -17,70 +17,75 @@ public class TimeService {
     private final LigaDaJusticaService ligaDaJusticaService;
     private final JogadorRepository jogadorRepository;
 
-    public TimeService(VingadoresService vingadoresService, LigaDaJusticaService ligaDaJusticaService, JogadorRepository jogadorRepository) {
+    public TimeService(VingadoresService vingadoresService,
+                       LigaDaJusticaService ligaDaJusticaService,
+                       JogadorRepository jogadorRepository) {
+
         this.vingadoresService = vingadoresService;
         this.ligaDaJusticaService = ligaDaJusticaService;
         this.jogadorRepository = jogadorRepository;
     }
 
     public Jogador cadastrarJogador(CadastroRequestDTO dto) {
+
         Objects.requireNonNull(dto, "CadastroRequestDTO não pode ser nulo");
+
         if (dto.getListaReferencia() == null || dto.getListaReferencia().isBlank()) {
             throw new IllegalArgumentException("É necessário informar a lista (ex: 'vingadores' ou 'liga').");
         }
 
         String listaEscolhida = dto.getListaReferencia().trim().toLowerCase();
 
-        // 1 - obtem codinomes da fonte correta
+        // 1 - Obter codinomes externos
         List<String> codinomesExterno;
         if (listaEscolhida.contains("vingador")) {
-            codinomesExterno = vingadoresService.buscarCodinomes();
+            codinomesExterno = vingadoresService.buscarCodinomesDisponiveis();
         } else if (listaEscolhida.contains("liga")) {
             codinomesExterno = ligaDaJusticaService.buscaCodinomesDisponiveis();
         } else {
             throw new IllegalArgumentException("Lista inválida. Use 'vingadores' ou 'liga'.");
         }
+
         if (codinomesExterno == null || codinomesExterno.isEmpty()) {
-            throw new IllegalArgumentException("Não foi possivel obter codinomes da lista selecionada.");
+            throw new IllegalArgumentException("Não foi possível obter codinomes da lista selecionada.");
         }
 
-        // 2 - obter os codinomes já usados no banco
+        // 2 - Codinomes usados no banco
         List<String> codinomesUsados = jogadorRepository.findAll()
                 .stream()
                 .map(Jogador::getCodinome)
                 .filter(Objects::nonNull)
                 .toList();
 
-        // 3 - encontrar o primeiro codinome disponível
+        // 3 - Pegar primeiro codinome disponível
         String codinomeLivre = codinomesExterno.stream()
                 .filter(c -> !codinomesUsados.contains(c))
                 .findFirst()
                 .orElse(null);
 
         if (codinomeLivre == null) {
-            throw new IllegalArgumentException("A lista escolhida não possui mais codinomes disponiveis.");
+            throw new IllegalArgumentException("A lista escolhida não possui mais codinomes disponíveis.");
         }
 
-        // 4 - criar entidade Jogador
+        // 4 - Criar jogador
         Jogador jogador = new Jogador();
         jogador.setNome(dto.getNome());
         jogador.setEmail(dto.getEmail());
         jogador.setTelefone(dto.getTelefone());
         jogador.setCodinome(codinomeLivre);
 
-        // guardar a referência da lista. Seu Jogador tem List<String>, então guardamos como lista com um item.
-        String referencia = listaEscolhida.contains("vingador") ? "vingadores.json" : "liga_da_justica.xml";
-        jogador.setListaReferencia(List.of(referencia).toString());
+        String referencia = listaEscolhida.contains("vingador")
+                ? "vingadores.json"
+                : "liga_da_justica.xml";
 
-        // 5 - persistir e retornar
+        // CORREÇÃO AQUI — salvar como STRING normal!
+        jogador.setListaReferencia(referencia);
+
+        // 5 - Persistir
         return jogadorRepository.save(jogador);
     }
 
-    /**
-     * Lista todos os jogadores cadastrados.
-     */
     public List<Jogador> listarJogadores() {
         return jogadorRepository.findAll();
     }
-
 }

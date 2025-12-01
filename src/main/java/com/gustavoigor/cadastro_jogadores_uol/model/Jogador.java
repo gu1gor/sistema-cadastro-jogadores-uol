@@ -8,10 +8,10 @@ import lombok.*;
 
 import java.util.List;
 
-@Entity
 @Data
-@RequiredArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Jogador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
