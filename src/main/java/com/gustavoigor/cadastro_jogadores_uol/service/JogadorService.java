@@ -75,8 +75,8 @@ public class JogadorService {
         jogador.setCodinome(codinomeLivre);
 
         String referencia = listaEscolhida.contains("vingador")
-                ? "vingadores.json"
-                : "liga_da_justica.xml";
+                ? "vingadores"
+                : "liga_da_justica";
 
         // CORREÇÃO AQUI — salvar como STRING normal!
         jogador.setListaReferencia(referencia);
