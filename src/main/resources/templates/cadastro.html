@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Jogadores - UOL</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    .container {
+        width: 400px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 6px;
+    }
+    h2 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-top: 12px;
+    }
+    input, select, button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+    }
+    button {
+        margin-top: 16px;
+        background-color: #0077cc;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Cadastro de Jogadores</h2>
+
+  <form th:action="@{/cadastrar}" th:object="${cadastro}" method="post">
+
+    <label>Nome *</label>
+    <input type="text" th:field="*{nome}" required>
+
+    <label>E-mail *</label>
+    <input type="email" th:field="*{email}" required>
+
+    <label>Telefone</label>
+    <input type="text" th:field="*{telefone}">
+
+    <label>Lista de Codinomes *</label>
+    <select th:field="*{listaReferencia}" required>
+      <option value="">Selecione</option>
+      <option value="vingadores">Os Vingadores</option>
+      <option value="liga">A Liga da Justiça</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+
+</body>
+</html>
