@@ -3,6 +3,7 @@ package com.gustavoigor.cadastro_jogadores_uol.controller;
 import com.gustavoigor.cadastro_jogadores_uol.dto.CadastroRequestDTO;
 import com.gustavoigor.cadastro_jogadores_uol.model.Jogador;
 import com.gustavoigor.cadastro_jogadores_uol.service.JogadorService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,7 @@ public class JogadorWebController {
     }
 
     @PostMapping("/cadastrar")
-    public String cadastrar(@ModelAttribute CadastroRequestDTO dto) {
+    public String cadastrar(@Valid @ModelAttribute CadastroRequestDTO dto) {
         jogadorService.cadastrarJogador(dto);
         return "redirect:/lista";
     }
