@@ -29,8 +29,7 @@ public class LigaDaJusticaService {
             return dto.getCodinomes();
 
         } catch (Exception e) {
-            System.out.println("Erro ao processar o XML: " + e.getMessage());
-            return List.of();
+            throw new IllegalStateException("Erro ao buscar codinomes Liga da Justiça");
         }
     }
 }

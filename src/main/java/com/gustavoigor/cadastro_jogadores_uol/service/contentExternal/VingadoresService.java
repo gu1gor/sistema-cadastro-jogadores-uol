@@ -34,8 +34,7 @@ public class VingadoresService {
                     .toList();
 
         } catch (Exception e) {
-            System.out.println("Erro ao converter JSON: " + e.getMessage());
-            return List.of();
+            throw new IllegalStateException("Erro ao buscar codinomes Vingadores");
         }
     }
 }
