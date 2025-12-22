@@ -1,12 +1,39 @@
-# Sistema de Cadastro de Jogadores desenvolvido em Java
-O projeto consiste em montar uma aplicação Java capaz de recuperar informações de um arquivo XML e de um arquivo JSON, persistir um cadastro em um banco de dados em memória ou em arquivo e listar os cadastros em uma interface simples, com os seguintes codinomes em duas listas distintas: "Os Vingadores" e "A Liga da Justiça", armazenando as informações em memória com HSQLDB.
+# Sistema de Cadastro de Jogadores – Java Spring Boot
 
-## Tecnologias utilizadas:
-* Java
-* Spring Boot 
-* Maven 
-* HSQLDB
-* JPA (Java Persistence API)
-* HTML
+Este projeto consiste no desenvolvimento de uma aplicação Java utilizando **Spring Boot**, capaz de consumir informações de arquivos externos nos formatos **JSON** e **XML**, persistir dados em um banco de dados em memória (**HSQLDB**) e disponibilizar uma interface simples para cadastro e listagem de jogadores.
 
+Os jogadores recebem automaticamente codinomes pertencentes a duas listas distintas:
+- **Os Vingadores**
+- **A Liga da Justiça**
 
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Java
+- Spring Boot
+- Maven
+- HSQLDB (banco de dados em memória)
+- JPA / Hibernate
+- HTML
+- Lombok
+
+---
+
+## ⚙️ Funcionalidades
+
+- Cadastro de jogadores
+- Escolha automática de codinomes
+- Consumo de dados externos (JSON e XML)
+- Persistência em banco de dados em memória
+- Listagem de jogadores cadastrados
+- Tratamento global de exceções com `@ControllerAdvice`
+
+---
+
+## ▶️ Como Rodar o Projeto
+
+1. Clone o repositório
+    https://github.com/gu1gor/sistema-cadastro-jogadores-uol.git
+2. Rode a classe `CadastroJogadoresUolApplication`
+3. Acesse:  http://localhost:8081
