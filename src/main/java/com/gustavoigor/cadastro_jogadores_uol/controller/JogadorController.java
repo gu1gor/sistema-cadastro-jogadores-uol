@@ -3,6 +3,7 @@ package com.gustavoigor.cadastro_jogadores_uol.controller;
 import com.gustavoigor.cadastro_jogadores_uol.dto.CadastroRequestDTO;
 import com.gustavoigor.cadastro_jogadores_uol.model.Jogador;
 import com.gustavoigor.cadastro_jogadores_uol.service.JogadorService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class JogadorController {
     }
 
     @PostMapping
-    public ResponseEntity<Jogador> cadastrar(@RequestBody CadastroRequestDTO dto) {
+    public ResponseEntity<Jogador> cadastrar(@Valid @RequestBody CadastroRequestDTO dto) {
         Jogador jogador = jogadorService.cadastrarJogador(dto);
         return ResponseEntity.ok(jogador);
     }
