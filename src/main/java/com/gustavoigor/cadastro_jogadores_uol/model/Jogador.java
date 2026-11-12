@@ -1,9 +1,6 @@
 package com.gustavoigor.cadastro_jogadores_uol.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -24,6 +21,7 @@ public class Jogador {
 
     /* Atributos controlados pelo sistema
     preenchidos quando o cadastro for feito */
+    @Column(unique = true)
     private String codinome;
 
     private String listaReferencia;    //vingadores.json" ou "liga_da_justica.xml
