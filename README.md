@@ -1,6 +1,7 @@
 # Sistema de Cadastro de Jogadores – Java Spring Boot
 
-Este projeto consiste no desenvolvimento de uma aplicação Java utilizando **Spring Boot**, capaz de consumir informações de arquivos externos nos formatos **JSON** e **XML**, persistir dados em um banco de dados em memória (**HSQLDB**) e disponibilizar uma interface simples para cadastro e listagem de jogadores.
+Este projeto consiste no desenvolvimento de uma aplicação Java utilizando **Spring Boot**, capaz de consumir informações de arquivos externos nos formatos **JSON** e **XML**, persistir dados em um banco de dados relacional HSQLDB,
+com armazenamento local em arquivos e disponibilizar uma interface simples para cadastro e listagem de jogadores.
 
 No momento do cadastro, o usuário escolhe uma lista de referência, e o sistema consulta em tempo real um arquivo externo (hospedado no GitHub) para atribuir automaticamente o **primeiro codinome disponível** (ainda não utilizado por outro jogador):
 
@@ -34,7 +35,7 @@ No momento do cadastro, o usuário escolhe uma lista de referência, e o sistema
 - Spring Validation
 - Thymeleaf
 - Maven
-- HSQLDB (banco de dados em memória)
+- HSQLDB (banco de dados relacional com persistência local em arquivos)
 - Jackson (Dataformat XML) + Jackson Databind (JSON)
 - Gson
 - Lombok
@@ -47,7 +48,7 @@ No momento do cadastro, o usuário escolhe uma lista de referência, e o sistema
 - Escolha de lista de referência (Vingadores ou Liga da Justiça) no momento do cadastro
 - Consumo em tempo real de arquivos externos (JSON e XML) hospedados no GitHub
 - Atribuição automática do primeiro codinome disponível na lista escolhida
-- Persistência em banco de dados em memória (HSQLDB)
+- Persistência de jogadores em banco de dados HSQLDB utilizando Spring Data JPA
 - Listagem de jogadores cadastrados (via API e via página web)
 - Validação de dados de entrada (nome obrigatório, e-mail obrigatório e válido)
 - Tratamento de erros de negócio (lista inválida, codinomes esgotados, falha ao consumir fonte externa, etc.)
@@ -195,6 +196,18 @@ curl -X POST http://localhost:8081/jogadores \
 ```
 
 ---
+
+### Tratamento de erros
+
+A API utiliza um tratamento global de exceções
+com `@RestControllerAdvice`.
+
+- **400 Bad Request:** dados inválidos ou lista
+  de referência não reconhecida.
+- **500 Internal Server Error:** erros internos
+  tratados pela aplicação.
+
+
 
 ## 🖥️ Interface Web
 
