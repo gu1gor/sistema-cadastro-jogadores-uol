@@ -225,6 +225,16 @@ Além da API REST, o projeto disponibiliza páginas HTML (via Thymeleaf) para us
 
 ---
 
+## Demonstração da aplicação
+
+### Listagem de jogadores
+
+A aplicação permite visualizar os jogadores cadastrados,
+seus codinomes e suas respectivas listas de referência.
+
+![Listagem de jogadores](docs/listagem-jogadores.png)
+
+
 ## 👤 Autor
 
 Desenvolvido por **Gustavo Igor**
